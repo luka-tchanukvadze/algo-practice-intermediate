@@ -1,2 +1,1 @@
-// theory: The big o of objects
-// Object Operations Quiz
+// theory:  When are Arrays Slow
