@@ -1,13 +1,18 @@
-function countUniqueValues(arr) {
-  if (arr.length === 0) return 0;
-  let i = 0;
-  for (var j = 1; j < arr.length; j++) {
-    if (arr[i] !== arr[j]) {
-      i++;
-      arr[i] = arr[j];
-    }
+function maxSubarraySum(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
   }
-  return i + 1;
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(tempSum, maxSum);
+  }
+  return maxSum;
 }
 
-console.log(countUniqueValues([1, 2, 2, 5, 7, 7, 99]));
+maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+
+console.log(maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
