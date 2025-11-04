@@ -1,23 +1,23 @@
-function power(base, exponent) {
-  if (exponent === 0) return 1;
-  return base * power(base, exponent - 1);
+function factorial(number) {
+  if (number === 0) return 1;
+  return number * factorial(number - 1);
 }
 
-console.log(power(2, 4));
+console.log(factorial(4));
 
 /*
 
-power
-Instructions
-Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow()  - do not worry about negative bases and exponents.
+Write a function factorial which accepts a number and returns the factorial of that number. A factorial is the product of an integer and all the integers below it; e.g., factorial four ( 4! ) is equal to 24, because 4 * 3 * 2 * 1 equals 24.  factorial zero (0!) is always 1.
 
 Test(s)
 Test 1
 describe('subject', function() {
-    it('should return the power of a number to an exponent', function() {
-        expect(power(2,0)).toBe(1)
-        expect(power(2,2)).toBe(4)
-        expect(power(2,4)).toBe(16)
+    it('should return the factorial of a number', function() {
+       expect(factorial(0)).toBe(1)
+       expect(factorial(1)).toBe(1)
+       expect(factorial(2)).toBe(2)
+       expect(factorial(4)).toBe(24)
+       expect(factorial(7)).toBe(5040)
     });
 });
 
