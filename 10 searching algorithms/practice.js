@@ -15,3 +15,5 @@ function binarySearch(arr, val) {
 }
 
 console.log(binarySearch([1, 2, 3], 3));
+
+// Binary Search BIG O
