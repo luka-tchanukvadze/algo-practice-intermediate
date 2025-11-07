@@ -1,19 +1,14 @@
-function binarySearch(arr, val) {
-  let start = 0;
-  let end = arr.length - 1;
+function stringSearch(str, val) {
+  let count = 0;
 
-  let middle = Math.floor((start + end) / 2);
-  while (start <= end && arr[middle] !== val) {
-    if (arr[middle] > val) {
-      end = middle - 1;
-    } else {
-      start = middle + 1;
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < val.length; j++) {
+      if (str[i + j] !== val[j]) break;
+      if (j === val.length - 1) count++;
     }
-    middle = Math.floor((start + end) / 2);
   }
-  return val !== arr[middle] ? -1 : middle;
+
+  return count;
 }
 
-console.log(binarySearch([1, 2, 3], 3));
-
-// Binary Search BIG O
+console.log(stringSearch("luka is chanu", "is"));
