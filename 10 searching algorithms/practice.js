@@ -11,4 +11,4 @@ function stringSearch(str, val) {
   return count;
 }
 
-console.log(stringSearch("luka is chanu", "is"));
+console.log(stringSearch("luka is chanu", "anu"));
