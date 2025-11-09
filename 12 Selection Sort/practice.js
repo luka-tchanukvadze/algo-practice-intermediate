@@ -8,13 +8,15 @@ function selectionSort(arr) {
       }
     }
 
-    console.log("*************");
-    let temp = arr[i];
-    console.log("swapping");
-    arr[i] = arr[lowest];
-    arr[lowest] = temp;
-    console.log(arr);
-    console.log("*************");
+    if (i !== lowest) {
+      console.log("*************");
+      let temp = arr[i];
+      console.log("swapping");
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+      console.log(arr);
+      console.log("*************");
+    }
   }
 
   return arr;
