@@ -7,7 +7,7 @@ function selectionSort(arr) {
         lowest = j;
       }
     }
-
+    console.log(i, lowest);
     if (i !== lowest) {
       console.log("*************");
       let temp = arr[i];
