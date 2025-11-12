@@ -27,5 +27,5 @@ function mergeSort(arr) {
   return merge(left, right);
 }
 
-console.log(merge([3, 4, 5], [1, 2, 3]));
+// console.log(merge([3, 4, 5], [1, 2, 3]));
 console.log(mergeSort([1, 3, 2, 5, 6, 8]));
