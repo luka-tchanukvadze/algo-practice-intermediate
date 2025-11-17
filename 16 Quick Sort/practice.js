@@ -13,18 +13,23 @@ function pivot(arr, start = 0, end = arr.length + 1) {
       swapIdx++;
       swap(arr, swapIdx, i);
     }
-    swap(arr, start, swapIdx);
   }
+  swap(arr, start, swapIdx);
 
   return swapIdx;
 }
 
 function quickSort(arr, left = 0, right = arr.length - 1) {
-  let pivotIndex = pivot(arr, left, right);
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
 
-  //left
-  quickSort(arr, left, pivotIndex - 1);
-  quickSort(arr, left + 1, pivotIndex);
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+
+  return arr;
 }
 
 // console.log(pivot([4, 9, 2, 1, 5, 7, 6, 3]));
