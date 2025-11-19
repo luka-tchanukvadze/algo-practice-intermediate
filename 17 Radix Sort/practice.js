@@ -18,4 +18,5 @@ function mostDigits(nums) {
 
 // console.log(getDigit(1235, 5));
 // console.log(digitCount(1233));
+// console.log(mostDigits([1, 2, 3, 4, 32]));
 console.log(mostDigits([1, 2, 3, 4, 32]));
