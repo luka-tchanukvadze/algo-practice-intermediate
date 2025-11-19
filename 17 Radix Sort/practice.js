@@ -25,7 +25,10 @@ function radixSort(nums) {
       let digit = getDigit(nums[i], k);
       digitBuckets[digit].push(nums[i]);
     }
+    nums = [].concat(...digitBuckets);
   }
+
+  return nums;
 }
 
 // console.log(getDigit(1235, 5));
