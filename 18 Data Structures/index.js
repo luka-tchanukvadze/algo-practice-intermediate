@@ -1,32 +1,54 @@
-class Student {
-  constructor(firstName, lastName, year) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.year = year;
-    this.tardies = 0;
-    this.scores = [];
+// class Student {
+//   constructor(firstName, lastName, year) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.year = year;
+//     this.tardies = 0;
+//     this.scores = [];
+//   }
+
+//   fullName() {
+//     return `${this.firstName} ${this.lastName} / ${this.year} years old`;
+//   }
+
+//   markLate() {
+//     this.tardies += 1;
+//     if (this.tardies >= 3) {
+//       return `You are experlled!!!`;
+//     }
+//     return `${this.firstName} has been late ${this.tardies} times`;
+//   }
+
+//   addScore(score) {
+//     this.scores.push(score);
+//     return this.scores;
+//   }
+
+//   static EnrollStudents(...Students) {
+//     return "ENROLLING STUDENTS";
+//   }
+// }
+
+// // let firstStudent = new Student("luka", "chanu", 10);
+// // let secondStudent = new Student("luka", "chanu", 10);
+// // console.log(firstStudent);
+// // console.log(firstStudent.markLate());
+// // console.log(firstStudent.addScore(30));
+// console.log(Student.EnrollStudents());
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
   }
 
-  fullName() {
-    return `${this.firstName} ${this.lastName} / ${this.year} years old`;
-  }
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
 
-  markLate() {
-    this.tardies += 1;
-    if (this.tardies >= 3) {
-      return `You are experlled!!!`;
-    }
-    return `${this.firstName} has been late ${this.tardies} times`;
-  }
-
-  addScore(score) {
-    this.scores.push(score);
-    return this.scores;
+    return Math.hypot(dx, dy);
   }
 }
 
-let firstStudent = new Student("luka", "chanu", 10);
-let secondStudent = new Student("luka", "chanu", 10);
-console.log(firstStudent);
-console.log(firstStudent.markLate());
-console.log(firstStudent.addScore(30));
+// const pi = new Point(5, 5);
+// ....
