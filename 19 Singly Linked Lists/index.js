@@ -15,12 +15,26 @@ class SinglyLinedList {
     this.length = 0;
   }
 
-  push(val) {}
+  push(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 // let first = new Node("hi");
 // first.next = new Node("there");
 // first.next.next = new Node("!");
 
-// let list = new SinglyLinedList()
-// list.push('hello')
+let list = new SinglyLinedList();
+list.push("hello");
+list.push("there");
+list.push("!");
+console.log(list);
