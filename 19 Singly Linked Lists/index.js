@@ -46,6 +46,28 @@ class SinglyLinedList {
 
     return current;
   }
+
+  shift() {
+    if (!this.head) return undefined;
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    return currentHead;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++;
+    return this;
+  }
 }
 
 // let first = new Node("hi");
@@ -57,3 +79,5 @@ list.push("hello");
 list.push("there");
 list.push("!");
 console.log(list);
+console.log("..");
+console.log(list.shift());
