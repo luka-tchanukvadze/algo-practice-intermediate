@@ -68,6 +68,28 @@ class SinglyLinedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (index < this.length || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
+
+  set(index, value) {
+    const foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 // let first = new Node("hi");
