@@ -106,6 +106,20 @@ class SinglyLinedList {
 
     return true;
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let prev = this.get(index - 1);
+    let removed = prev.next;
+    prev.next = removed.next;
+    removed.next = null;
+
+    this.length--;
+    return removed;
+  }
 }
 
 // let first = new Node("hi");
