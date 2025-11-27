@@ -120,6 +120,33 @@ class SinglyLinedList {
     this.length--;
     return removed;
   }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 // let first = new Node("hi");
@@ -130,6 +157,7 @@ let list = new SinglyLinedList();
 list.push("hello");
 list.push("there");
 list.push("!");
-console.log(list);
-console.log("..");
-console.log(list.shift());
+
+list.print();
+list.reverse();
+list.print();
