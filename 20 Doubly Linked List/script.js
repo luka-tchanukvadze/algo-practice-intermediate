@@ -29,15 +29,15 @@ class DoublyLinedList {
   }
 
   pop() {
-    if (this.head === null) return undefined;
+    if (!this.head) return undefined;
     let removedTail = this.tail;
     if (this.length === 1) {
       this.tail = null;
       this.head = null;
+    } else {
+      this.tail = removedTail.prev;
+      this.tail.next = null;
     }
-
-    this.tail = this.tail.prev;
-    this.tail.next = null;
     this.length--;
 
     return removedTail;
