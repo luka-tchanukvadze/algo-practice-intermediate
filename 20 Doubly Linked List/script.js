@@ -27,4 +27,19 @@ class DoublyLinedList {
 
     return this;
   }
+
+  pop() {
+    if (this.head === null) return undefined;
+    let removedTail = this.tail;
+    if (this.length === 1) {
+      this.tail = null;
+      this.head = null;
+    }
+
+    this.tail = this.tail.prev;
+    this.tail.next = null;
+    this.length--;
+
+    return removedTail;
+  }
 }
