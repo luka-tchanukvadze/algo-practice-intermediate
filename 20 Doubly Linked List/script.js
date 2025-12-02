@@ -134,6 +134,7 @@ class DoublyLinedList {
     if (index === this.length) return this.pop();
 
     let removedNode = this.get(index);
+
     removedNode.prev.next = removedNode.next;
     removedNode.next.prev = removedNode.prev;
     removedNode.next = null;
