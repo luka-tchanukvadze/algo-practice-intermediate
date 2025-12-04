@@ -3,6 +3,8 @@
 // stack.push("instagram");
 // stack.pop();
 
+const { ReceiptPoundSterling } = require("lucide-react");
+
 // stack.unshift("Create a new file");
 // stack.shift();
 
@@ -32,6 +34,18 @@ class Stack {
     }
 
     return ++this.size;
+  }
+
+  pop() {
+    if (!this.first) return null;
+    let temp = this.first;
+    if (this.first === this.last) {
+      this.last = null;
+    }
+
+    this.first = this.first.next;
+    this.size--;
+    return temp.value;
   }
 }
 
