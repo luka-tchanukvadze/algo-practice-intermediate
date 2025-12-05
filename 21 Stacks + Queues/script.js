@@ -55,3 +55,16 @@
 // stack.push("second");
 // stack.push("FIRST");
 // stack.push("FIRST");
+
+let q = [];
+q.push("first");
+q.push("second");
+q.push("third");
+
+q.shift();
+
+q = [];
+
+q.unshift("first");
+q.unshift("second");
+q.pop();
