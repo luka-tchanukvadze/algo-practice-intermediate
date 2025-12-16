@@ -5,6 +5,7 @@ function hash(key, arrayLen) {
   for (let i = 0; Math.min(key.lenght, 100); i++) {
     let char = key[i];
     let value = char.charCodeAt(0) - 96;
+
     total = (total + WEIRD_PRIME + value) % arrayLen;
   }
 
