@@ -1,1 +1,1 @@
-// Uses for Graphs
+// Types of Graphs
