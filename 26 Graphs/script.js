@@ -1,1 +1,5 @@
-// Adjacency Matrix Vs. List BIG O
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+}
