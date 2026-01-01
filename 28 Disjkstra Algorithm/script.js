@@ -35,6 +35,7 @@ class WeightedGraph {
     const nodes = new PriorityQueue();
     const distances = {};
     const previous = {};
+    let path = [];
     let smallest;
 
     // build up initial state
@@ -56,6 +57,11 @@ class WeightedGraph {
       if (smallest === finish) {
         // we are done
         // build up ppath to return at end
+        while (previous[smallest]) {
+          path.push(smallest);
+          smallest = previous[smallest];
+        }
+        break;
       }
       if (smallest || distances[smallest] !== Infinity) {
         for (let neighbor in this.adjacencyList[smallest]) {
@@ -63,8 +69,19 @@ class WeightedGraph {
           let nextNode = this.adjacencyList[smallest][neighbor];
           // calculate new distance to neighboring node
           let candidate = distances[smallest] + nextNode.weight;
+          let nextNeighbore = nextNode.node;
+
+          if (candidate < distances[nextNeighbore]) {
+            // updating new smallest distance to neighbor
+            distances[nextNeighbore] = candidate;
+            // updating previous  - how we got to neighbor
+            previous[nextNeighbore] = smallest;
+            // enqueue in priority queue with new priority
+            nodes.enqueue(nextNeighbore, candidate);
+          }
         }
       }
     }
+    return path.concat(smallest).reverse();
   }
 }
